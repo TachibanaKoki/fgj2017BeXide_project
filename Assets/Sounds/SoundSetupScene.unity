@@ -317,7 +317,7 @@ MonoBehaviour:
     numberOfMaxEntries: 4
     graphicsMultiThreaded: 0
   dontInitializeOnAwake: 0
-  dontDestroyOnLoad: 0
+  dontDestroyOnLoad: 1
 --- !u!4 &2000335570
 Transform:
   m_ObjectHideFlags: 0
