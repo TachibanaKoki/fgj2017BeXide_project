@@ -11,11 +11,11 @@ public enum CharacterStatus
 }
 
 
-public class CharacterManager : MonoBehaviour
+public class CharacterManager : SingletonMonoBehaviourFast<CharacterManager>
 {
     public Slider slider;
     public CharacterStatus status;
-    float m_nakedGage = 1.0f;
+	public float m_nakedGage = 1.0f;
 	int message = 0;
 
     // Use this for initialization
