@@ -16,6 +16,7 @@ public class CharacterManager : MonoBehaviour
     public Slider slider;
     public CharacterStatus status;
     float m_nakedGage = 1.0f;
+	int message = 0;
 
     // Use this for initialization
     void Start ()
@@ -25,7 +26,19 @@ public class CharacterManager : MonoBehaviour
 	
     public void DecreseNakedGage()
     {
-        m_nakedGage -= 0.2f * Time.deltaTime;
+        m_nakedGage -= 0.2f * Time.deltaTime; //0.05f
+		//UI Code - text box
+		/*if (m_nakedGage > 0.75) 
+		{
+			セリフのチョイスの一つ
+		}
+		else if (m_nakedGage > 0.5 && m_nakedGage < 0.74) 
+		{
+		}
+		else if(m_nakedGage > 0.25 && m_nakedGage < 0.49) 
+		{
+		}
+		(m_nakedGage > 0.01 && m_nakedGage< 0.24) */
 
         if(m_nakedGage<0)
         {
