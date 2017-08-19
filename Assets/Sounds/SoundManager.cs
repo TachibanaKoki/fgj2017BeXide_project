@@ -44,7 +44,7 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 		
 	}
 
-	enum EnumBgmEvent
+	public enum EnumBgmEvent
 	{
 		title,
 		bgm_low,
@@ -56,7 +56,7 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 	/// 呼び出し例 ->	SoundManager.Instance.SoundEvent(EnumBgmEvent.bgm_hi);
 	/// </summary>
 	/// <param name="bgmEvent">Bgm event.</param>
-	void SoundEvent(EnumBgmEvent bgmEvent)
+	public void SoundEvent(EnumBgmEvent bgmEvent)
 	{
 		switch (bgmEvent) {
 		case  EnumBgmEvent.title:
