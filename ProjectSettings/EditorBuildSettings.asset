@@ -41,3 +41,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Prologue 8.unity
     guid: 793c84234ad224732971945ca8ab6862
+  - enabled: 1
+    path: Assets/Scene/Game Over.unity
+    guid: b8aafea68d153401b9adad1db4a42522
+  - enabled: 1
+    path: Assets/Scene/Game Over 2.unity
+    guid: e58a189097b2d4bbeaa7c1d3318113d0
+  - enabled: 1
+    path: Assets/Scene/Game Over 3.unity
+    guid: 5f5d39edac76b4829849d99e4dcbc967
