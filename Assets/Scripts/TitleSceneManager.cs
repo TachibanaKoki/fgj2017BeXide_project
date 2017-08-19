@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TitleSceneManager : MonoBehaviour
 {
-    string SceneName = "main";
+    string SceneName = "Prologue 1";
 
     bool isNext = false;
     AsyncOperation async;
@@ -32,7 +32,7 @@ public class TitleSceneManager : MonoBehaviour
             isNext = true;
             SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
             SceneManager.LoadSceneAsync(SceneName,LoadSceneMode.Additive);
-            SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.bgm_low);
+
         }
 	}
 }

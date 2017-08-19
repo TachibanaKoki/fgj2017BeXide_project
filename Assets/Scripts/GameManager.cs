@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadSceneAsync("SoundSetupScene", LoadSceneMode.Additive);
         }
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("main"));
+        SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.bgm_low);
     }
 
 	public void GameClear()
