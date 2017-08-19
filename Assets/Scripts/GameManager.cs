@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         I = this;
+        if(SoundManager.Instance==null)
+        {
+            SceneManager.LoadSceneAsync("SoundSetupScene", LoadSceneMode.Additive);
+        }
     }
 
 	public void GameClear()

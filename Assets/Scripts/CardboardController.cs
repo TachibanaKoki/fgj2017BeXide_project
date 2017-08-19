@@ -50,5 +50,6 @@ public class CardboardController : MonoBehaviour
     void PickCardBoard(CardBoardItem item)
     {
         Parts[(int)item.partsType].GetComponent<Renderer>().material.mainTexture = item.texture;
+        GetComponent<CharacterManager>().OnItemPick();
     }
 }
