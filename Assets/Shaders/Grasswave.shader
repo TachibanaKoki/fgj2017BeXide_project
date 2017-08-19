@@ -44,7 +44,7 @@ SubShader {
 	    //p.x += sin((_Time.y * _WaveCycle)) *  _WaveAmount * sy;
 	    //p.z += cos((_Time.y * _WaveCycle)) *  _WaveAmount * sy;
 
-		p.y = sin(_Time.y * _WaveCycle)*0.2-1;// + (p.z + p.x)*0.1*sin((_Time.y * _WaveCycle)));
+		//p.y = sin(_Time.y * _WaveCycle)*0.2-0.7;// + (p.z + p.x)*0.1*sin((_Time.y * _WaveCycle)));
 
 	    v.vertex = p;   
 	}   
