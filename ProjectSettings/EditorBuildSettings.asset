@@ -17,3 +17,27 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Title.unity
     guid: f5e783dc41293c349a5b068c3138d97e
+  - enabled: 1
+    path: Assets/Scene/Prologue 1.unity
+    guid: 106ec3797928646358afd696547c9059
+  - enabled: 1
+    path: Assets/Scene/Prologue 2.unity
+    guid: 4e23620c73c2445ef8aa3344b8aeaf5f
+  - enabled: 1
+    path: Assets/Scene/Prologue 3.unity
+    guid: cedc81750451e4e4d98efd30ced0d478
+  - enabled: 1
+    path: Assets/Scene/Prologue 4.unity
+    guid: 03b12ed05f7ce45d89d7b1780ba51ab8
+  - enabled: 1
+    path: Assets/Scene/Prologue 5.unity
+    guid: 1476962e8779d407d8c19dbfde01f2eb
+  - enabled: 1
+    path: Assets/Scene/Prologue 6.unity
+    guid: 626dd35825b5e4f14b0badc94dab94fe
+  - enabled: 1
+    path: Assets/Scene/Prologue 7.unity
+    guid: 6e038339931f64f9fbe66a086e32f64e
+  - enabled: 1
+    path: Assets/Scene/Prologue 8.unity
+    guid: 793c84234ad224732971945ca8ab6862

@@ -80,7 +80,12 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 		/// <summary>
 		/// Unityちゃんが立ち止まったら
 		/// </summary>
-		Standing
+		Standing,
+
+		/// <summary>
+		/// ゲームオーバー
+		/// </summary>
+		gameover
 
 	}
 
@@ -118,15 +123,16 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 			break;
 		case  EnumBgmEvent.clear:
 			atomSourceSe.Play ("clear");
-			break;
-		
+			break;		
 		case  EnumBgmEvent.Footstep:
 			atomSourceSe.Play ("Footstep");
 			break;
 		case  EnumBgmEvent.Standing:
 			atomSourceSe.Play ("Standing");
 			break;
-
+		case  EnumBgmEvent.gameover:
+			atomSourceSe.Play ("gameover");
+			break;
 		}
 	}
 }
