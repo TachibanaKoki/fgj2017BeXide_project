@@ -51,12 +51,36 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 
 	public enum EnumBgmEvent
 	{
+		/// <summary>
+		/// タイトル画面
+		/// </summary>
 		title,
+		/// <summary>
+		/// ゲーム中
+		/// </summary>
 		bgm_low,
+		/// <summary>
+		/// ゲーム中みつかった時
+		/// </summary>
 		bgm_hi,
 
+		/// <summary>
+		/// ダンボールゲット
+		/// </summary>
 		danbowl_get,
-		clear
+		/// <summary>
+		/// ゲームクリア
+		/// </summary>
+		clear,
+
+		/// <summary>
+		/// Unityちゃんが走っていたら
+		/// </summary>
+		Footstep,
+		/// <summary>
+		/// Unityちゃんが立ち止まったら
+		/// </summary>
+		Standing
 
 	}
 
@@ -95,6 +119,14 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 		case  EnumBgmEvent.clear:
 			atomSourceSe.Play ("clear");
 			break;
+		
+		case  EnumBgmEvent.Footstep:
+			atomSourceSe.Play ("Footstep");
+			break;
+		case  EnumBgmEvent.Standing:
+			atomSourceSe.Play ("Standing");
+			break;
+
 		}
 	}
 }
