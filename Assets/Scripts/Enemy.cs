@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
                     if (m_agent.remainingDistance < 0.5f)
                         GotoNextPoint();
                 }
-                //SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.bgm_hi);
+
                 break;
             case CharacterStatus.Discovery:
                 if (isStop)
@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
                 {
                     m_agent.destination = character.transform.position;
                 }
-                //SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.bgm_low);
+
                 break;
         }
 
@@ -76,6 +76,7 @@ public class Enemy : MonoBehaviour
             col.GetComponent<CharacterManager>().SetStatus(CharacterStatus.Discovery);
             state = CharacterStatus.Discovery;
             character = col.gameObject;
+            SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.bgm_hi);
         }
     }
 
@@ -90,6 +91,7 @@ public class Enemy : MonoBehaviour
             {
                 GotoNextPoint();
             }
+            SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.bgm_low);
         }
     }
 
