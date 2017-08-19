@@ -34,6 +34,5 @@ public class TitleSceneManager : MonoBehaviour
             SceneManager.LoadSceneAsync(SceneName,LoadSceneMode.Additive);
             SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.bgm_low);
         }
-
 	}
 }
