@@ -30,13 +30,14 @@
 			float dist = distance( _HandPos , IN.worldPos); //fixed3(0,0,0), IN.worldPos);
 			//_HandPos.x += _SinTime.a;
 			float dist2 = distance( _HandPos , IN.worldPos); //fixed3(0,0,0), IN.worldPos);
-			float val = abs(sin(dist*3.0-_Time*100)) + abs(sin(dist2*3.0-_Time*100));
+			float val = abs(sin(dist*3.0+_Time*100)) + abs(sin(dist2*3.0+_Time*100));
 			if( val > 0.98 ){
 				o.Albedo = _Color*0.95 + _SinTime.z*0.05;//fixed4(1, 1, 1, 1);
 				o.Alpha = _Alpha;
 			} else {
 				o.Albedo = _Color2;//fixed4(110/255.0, 87/255.0, 139/255.0, 1);
 				o.Alpha = _Alpha;
+				o.Emission = _Color*0.95 + _SinTime.z*0.05;
 			}
 		}
 		ENDCG
