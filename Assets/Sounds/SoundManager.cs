@@ -53,7 +53,10 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 	{
 		title,
 		bgm_low,
-		bgm_hi
+		bgm_hi,
+
+		danbowl_get,
+		clear
 
 	}
 
@@ -83,12 +86,15 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 				atomSourceBgm.Play ();
 			}
 			atomSourceBgm.player.UpdateAll ();
-
 			atomSourceSe.Play ("odoroki");
-
 			break;
 		
-
+		case  EnumBgmEvent.danbowl_get:
+			atomSourceSe.Play ("danbowl_get");
+			break;
+		case  EnumBgmEvent.clear:
+			atomSourceSe.Play ("clear");
+			break;
 		}
 	}
 }
