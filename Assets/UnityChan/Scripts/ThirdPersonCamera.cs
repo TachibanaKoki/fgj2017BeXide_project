@@ -45,8 +45,8 @@ public class ThirdPersonCamera : MonoBehaviour
 	{
 		if(bQuickSwitch == false){
 		// the camera to standard position and direction
-						transform.position = Vector3.Lerp(transform.position, standardPos.position, Time.fixedDeltaTime * smooth);	
-						transform.forward = Vector3.Lerp(transform.forward, standardPos.forward, Time.fixedDeltaTime * smooth);
+		transform.position = Vector3.Lerp(transform.position, standardPos.position, Time.fixedDeltaTime * smooth);	
+		transform.forward = Vector3.Lerp(transform.forward, standardPos.forward, Time.fixedDeltaTime * smooth);
 		}
 		else{
 			// the camera to standard position and direction / Quick Change
@@ -69,7 +69,7 @@ public class ThirdPersonCamera : MonoBehaviour
 	{
 		// Change Jump Camera
 		bQuickSwitch = false;
-				transform.position = Vector3.Lerp(transform.position, jumpPos.position, Time.fixedDeltaTime * smooth);	
-				transform.forward = Vector3.Lerp(transform.forward, jumpPos.forward, Time.fixedDeltaTime * smooth);		
+		transform.position = Vector3.Lerp(transform.position, jumpPos.position, Time.fixedDeltaTime * smooth);	
+		transform.forward = Vector3.Lerp(transform.forward, jumpPos.forward, Time.fixedDeltaTime * smooth);		
 	}
 }
