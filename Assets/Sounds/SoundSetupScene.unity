@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 198394053}
   - component: {fileID: 198394052}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: CriAtom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
