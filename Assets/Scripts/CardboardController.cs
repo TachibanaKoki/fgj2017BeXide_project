@@ -36,6 +36,17 @@ public class CardboardController : MonoBehaviour
         }
     }
 
+
+    void OnTriggerEnter(Collider col)
+    {
+        Debug.Log("Hit");
+        if (col.tag == "Finish")
+        {
+            Debug.Log("TagHit");
+            GameManager.I.GameClear();
+        }
+    }
+
     void PickCardBoard(CardBoardItem item)
     {
         Parts[(int)item.partsType].GetComponent<Renderer>().material.mainTexture = item.texture;

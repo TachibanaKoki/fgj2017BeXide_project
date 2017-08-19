@@ -223,13 +223,5 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				m_Animator.applyRootMotion = false;
 			}
 		}
-
-        void OnColliderEnter(Collider col)
-        {
-            if(col.tag == "Finish")
-            {
-                
-            }
-        }
 	}
 }
