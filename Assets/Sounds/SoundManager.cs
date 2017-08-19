@@ -5,11 +5,16 @@ using UnityEngine;
 public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 
 	CriAtomSource atomSourceBgm;
+	CriAtomSource atomSourceSe;
 	// Use this for initialization
 	void Start () {
 		atomSourceBgm = this.gameObject.AddComponent<CriAtomSource> ();
 		atomSourceBgm.cueSheet = "CueSheet_0";
 		atomSourceBgm.use3dPositioning = false;
+
+		atomSourceSe = this.gameObject.AddComponent<CriAtomSource> ();
+		atomSourceSe.cueSheet = "CueSheet_0";
+		atomSourceSe.use3dPositioning = false;
 
 
 		//StartCoroutine ("SoundTest");
@@ -78,6 +83,9 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 				atomSourceBgm.Play ();
 			}
 			atomSourceBgm.player.UpdateAll ();
+
+			atomSourceSe.Play ("odoroki");
+
 			break;
 		
 
