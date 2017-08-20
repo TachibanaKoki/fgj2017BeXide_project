@@ -26,7 +26,12 @@ public class Enemy : MonoBehaviour
 			m_agent = GetComponent<NavMeshAgent>();
 		}
 		points = NavPointsData.I.points;
-	}
+        destPoint = Random.Range(0,points.Length);
+        if (!isStop)
+        {
+                GotoNextPoint();
+        }
+    }
 
 	// Update is called once per frame
 	void Update ()
