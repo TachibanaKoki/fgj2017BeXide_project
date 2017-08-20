@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
         }
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("main"));
         SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.bgm_low);
+
+		SoundManager.Instance.PlayEnemyVoice ("opningVoice_Stop");
     }
 
 	public void GameClear()
