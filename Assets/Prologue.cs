@@ -14,8 +14,9 @@ public class Prologue : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if((Time.timeSinceLevelLoad > 4 || Input.GetButton ("Fire1")) && SceneManager.GetActiveScene().buildIndex != 6)
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		if ((Time.timeSinceLevelLoad > 4 || Input.GetButton ("Fire1")) && SceneManager.GetActiveScene ().buildIndex != 6) {			
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
+		}
 	}
 }
 
