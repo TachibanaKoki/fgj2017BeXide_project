@@ -29,6 +29,9 @@ public class TitleSceneManager : MonoBehaviour
         }
 		if(Input.GetButton("Fire1")&&!isNext)
         {
+			{
+				SoundManager.Instance.SoundEvent (SoundManager.EnumBgmEvent.opening);
+			}
             isNext = true;
             SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
             SceneManager.LoadSceneAsync(SceneName,LoadSceneMode.Additive);

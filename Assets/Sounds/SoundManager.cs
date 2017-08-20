@@ -88,6 +88,11 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 		/// タイトル画面
 		/// </summary>
 		title,
+
+		/// <summary>
+		/// ゲーム開始後opening
+		/// </summary>
+		opening,
 		/// <summary>
 		/// ゲーム中
 		/// </summary>
@@ -132,6 +137,9 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 		case  EnumBgmEvent.title:
 			atomSourceBgm.cueName = "title";
 			atomSourceBgm.Play ();
+			break;
+		case  EnumBgmEvent.opening:
+			atomSourceSe.Play ("opningVoice");
 			break;
 		case  EnumBgmEvent.bgm_low:
 			atomSourceBgm.player.SetSelectorLabel ("BgmState", "low");
