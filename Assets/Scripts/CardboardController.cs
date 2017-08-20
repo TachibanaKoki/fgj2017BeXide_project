@@ -49,7 +49,7 @@ public class CardboardController : MonoBehaviour
 
     void PickCardBoard(CardBoardItem item)
     {
-        Parts[(int)item.partsType].GetComponent<Renderer>().material.mainTexture = item.texture;
+        Parts[(int)item.partsType].GetComponent<Renderer>().material = item.mat;
         GetComponent<CharacterManager>().OnItemPick();
         SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.danbowl_get);
     }
