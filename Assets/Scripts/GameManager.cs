@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         gameOverImage.sprite = GameClearImage;
         gameOverImage.rectTransform.DOLocalMoveY(0.0f, 2.0f).SetEase(Ease.OutBounce).OnKill(() =>
         {
-            SceneManager.LoadSceneAsync("main");
+            SceneManager.LoadSceneAsync("Clear");
             SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.clear);
 
         }

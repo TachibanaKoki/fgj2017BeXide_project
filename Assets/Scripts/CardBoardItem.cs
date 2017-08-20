@@ -14,9 +14,5 @@ public class CardBoardItem : MonoBehaviour
         mat = GetComponent<Renderer>().material;
         partsType = (CardBoardParts)Random.Range(0,4);
 	}
-	
-	void Update ()
-    {
-		
-	}
+
 }

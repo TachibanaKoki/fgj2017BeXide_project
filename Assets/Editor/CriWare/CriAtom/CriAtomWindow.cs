@@ -93,7 +93,7 @@ public sealed class CriAtomWindow : EditorWindow
 	{
 		if(CriAtomAcfInfo.GetCueInfo(true,searchPath)){
 			this.acfPath = CriAtomAcfInfo.acfInfo.acfFilePath;
-			CriAtomAcfInfo.acfInfo.GetAcbInfoList(true,searchPath);
+			//CriAtomAcfInfo.acfInfo.GetAcbInfoList(true,searchPath);
 		} else {
 			if(EditorApplication.isPlaying){
 				Debug.LogError("Not found search file. (created in CRI Atom Craft [acf,acb,awb]) \"" + searchPath + "\"",this);
@@ -108,20 +108,20 @@ public sealed class CriAtomWindow : EditorWindow
 		#region CueSheet
 		EditorGUILayout.BeginHorizontal();
 		{
-			EditorGUILayout.PrefixLabel("Cue Sheet");
+			//EditorGUILayout.PrefixLabel("Cue Sheet");
 
-			List<string> popupCueSheetNameList = new List<string>();
-			var acbInfoList = CriAtomAcfInfo.acfInfo.GetAcbInfoList(false,searchPath);
-			foreach (CriAtomAcfInfo.AcbInfo cueSheetInfo in acbInfoList)
-			{
-				popupCueSheetNameList.Add(cueSheetInfo.name);
-			}
-			lastPreviewCueSheetId = this.selectedCueSheetId;
-			this.selectedCueSheetId = EditorGUILayout.Popup(this.selectedCueSheetId, popupCueSheetNameList.ToArray());
-			if (this.selectedCueSheetId != lastPreviewCueSheetId)
-			{
-				this.selectedCueId = 0;
-			}
+			//List<string> popupCueSheetNameList = new List<string>();
+			//var acbInfoList = CriAtomAcfInfo.acfInfo.GetAcbInfoList(false,searchPath);
+			//foreach (CriAtomAcfInfo.AcbInfo cueSheetInfo in acbInfoList)
+			//{
+			//	popupCueSheetNameList.Add(cueSheetInfo.name);
+			//}
+			//lastPreviewCueSheetId = this.selectedCueSheetId;
+			//this.selectedCueSheetId = EditorGUILayout.Popup(this.selectedCueSheetId, popupCueSheetNameList.ToArray());
+			//if (this.selectedCueSheetId != lastPreviewCueSheetId)
+			//{
+			//	this.selectedCueId = 0;
+			//}
 		}
 		EditorGUILayout.EndHorizontal();
 		#endregion
@@ -144,36 +144,36 @@ public sealed class CriAtomWindow : EditorWindow
 //			GUIImportAssetsFromAtomCraft(); 
 //		} else 
 		{
-			var acbInfoList = CriAtomAcfInfo.acfInfo.GetAcbInfoList(false,searchPath);
-			if(acbInfoList.Length > this.selectedCueSheetId){
-				var acbInfo = acbInfoList[this.selectedCueSheetId];
+			//var acbInfoList = CriAtomAcfInfo.acfInfo.GetAcbInfoList(false,searchPath);
+			//if(acbInfoList.Length > this.selectedCueSheetId){
+			//	var acbInfo = acbInfoList[this.selectedCueSheetId];
 
-				if (acbInfo.cueInfoList.Count > 0) {
-					float height = this.position.height - 354.0f;
-					if (height < 100.0f) height = 100.0f;
-					scrollPos = EditorGUILayout.BeginScrollView(scrollPos, GUILayout.Height(height));
-					foreach (CriAtomAcfInfo.CueInfo inf in acbInfo.cueInfoList.Values) {
-						EditorGUILayout.BeginHorizontal();
-						if(this.selectedCueId == inf.id){
-							GUI.color = Color.yellow;
-						} else {
-							GUI.color = Color.white;
-						}
+			//	if (acbInfo.cueInfoList.Count > 0) {
+			//		float height = this.position.height - 354.0f;
+			//		if (height < 100.0f) height = 100.0f;
+			//		scrollPos = EditorGUILayout.BeginScrollView(scrollPos, GUILayout.Height(height));
+			//		foreach (CriAtomAcfInfo.CueInfo inf in acbInfo.cueInfoList.Values) {
+			//			EditorGUILayout.BeginHorizontal();
+			//			if(this.selectedCueId == inf.id){
+			//				GUI.color = Color.yellow;
+			//			} else {
+			//				GUI.color = Color.white;
+			//			}
 
-						if (GUILayout.Button(inf.name, EditorStyles.radioButton)) {
-							this.selectedCueId = inf.id;
-						}
+			//			if (GUILayout.Button(inf.name, EditorStyles.radioButton)) {
+			//				this.selectedCueId = inf.id;
+			//			}
 
 
-						GUILayout.Label(inf.id.ToString(), GUILayout.Width(40));
-						EditorGUILayout.EndHorizontal();
-					}
-					GUI.color = Color.white;
-					EditorGUILayout.EndScrollView();
-				} else {
-					EditorGUILayout.HelpBox("Can not found(CueSheetID:" + this.selectedCueSheetId.ToString() + ")\nDo update display, Please push the play button in Unity Editor.\n and push \"Reload Info\" button.", MessageType.Error);
-				}
-			}
+			//			GUILayout.Label(inf.id.ToString(), GUILayout.Width(40));
+			//			EditorGUILayout.EndHorizontal();
+			//		}
+			//		GUI.color = Color.white;
+			//		EditorGUILayout.EndScrollView();
+			//	} else {
+			//		EditorGUILayout.HelpBox("Can not found(CueSheetID:" + this.selectedCueSheetId.ToString() + ")\nDo update display, Please push the play button in Unity Editor.\n and push \"Reload Info\" button.", MessageType.Error);
+			//	}
+			//}
 		}
 	}
 	
@@ -190,18 +190,18 @@ public sealed class CriAtomWindow : EditorWindow
 //			GUIImportAssetsFromAtomCraft();
 //		} else 
 		{
-			var acbInfoList = CriAtomAcfInfo.acfInfo.GetAcbInfoList(false,searchPath);
-			if(acbInfoList.Length > this.selectedCueSheetId){
-				var acbInfo = acbInfoList[selectedCueSheetId];
-				if (acbInfo.cueInfoList.ContainsKey(this.selectedCueId)) {
-					var cueInfo = acbInfo.cueInfoList[this.selectedCueId];
-					EditorGUILayout.LabelField("Cue Name", cueInfo.name);
-					EditorGUILayout.LabelField("User Data", cueInfo.comment, EditorStyles.wordWrappedLabel, GUILayout.Height(28));
-					EditorGUILayout.Space();
-				} else {
-					EditorGUILayout.HelpBox("Can not Get Cue Info!!!(CueID:" + this.selectedCueId.ToString() + ")", MessageType.Error);
-				}
-			}
+			//var acbInfoList = CriAtomAcfInfo.acfInfo.GetAcbInfoList(false,searchPath);
+			//if(acbInfoList.Length > this.selectedCueSheetId){
+			//	var acbInfo = acbInfoList[selectedCueSheetId];
+			//	if (acbInfo.cueInfoList.ContainsKey(this.selectedCueId)) {
+			//		var cueInfo = acbInfo.cueInfoList[this.selectedCueId];
+			//		EditorGUILayout.LabelField("Cue Name", cueInfo.name);
+			//		EditorGUILayout.LabelField("User Data", cueInfo.comment, EditorStyles.wordWrappedLabel, GUILayout.Height(28));
+			//		EditorGUILayout.Space();
+			//	} else {
+			//		EditorGUILayout.HelpBox("Can not Get Cue Info!!!(CueID:" + this.selectedCueId.ToString() + ")", MessageType.Error);
+			//	}
+			//}
 		}
 		#endregion
 	}
@@ -243,18 +243,18 @@ public sealed class CriAtomWindow : EditorWindow
 				}
 				if (GUILayout.Button("Update Cue Info", EditorStyles.miniButtonRight, GUILayout.Height(22))) {
 					if (atomSource != null) {
-						var acbInfoList = CriAtomAcfInfo.acfInfo.GetAcbInfoList(false,searchPath);
-						if(acbInfoList.Length > this.selectedCueSheetId){
-							var acbInfo = acbInfoList[this.selectedCueSheetId];
-							var cueInfo = acbInfo.cueInfoList[this.selectedCueId];
-							if (atomSource.cueSheet == acbInfo.name && atomSource.cueName == cueInfo.name) {
-								EditorUtility.DisplayDialog("Information", "Is the same configuration.", "OK");
-							} else {
-								atomSource.cueSheet = acbInfo.name;
-								atomSource.cueName = cueInfo.name;
-							}
-							Selection.activeGameObject = targetObject;
-						}
+						//var acbInfoList = CriAtomAcfInfo.acfInfo.GetAcbInfoList(false,searchPath);
+						//if(acbInfoList.Length > this.selectedCueSheetId){
+						//	var acbInfo = acbInfoList[this.selectedCueSheetId];
+						//	var cueInfo = acbInfo.cueInfoList[this.selectedCueId];
+						//	if (atomSource.cueSheet == acbInfo.name && atomSource.cueName == cueInfo.name) {
+						//		EditorUtility.DisplayDialog("Information", "Is the same configuration.", "OK");
+						//	} else {
+						//		atomSource.cueSheet = acbInfo.name;
+						//		atomSource.cueName = cueInfo.name;
+						//	}
+						//	Selection.activeGameObject = targetObject;
+						//}
 					}
 				}
 				GUI.backgroundColor = Color.white;
@@ -268,34 +268,34 @@ public sealed class CriAtomWindow : EditorWindow
 	{
 		List<CriAtomAcfInfo.CueInfo> cueList = new List<CriAtomAcfInfo.CueInfo>();
 
-		var acbInfoList = CriAtomAcfInfo.acfInfo.GetAcbInfoList(false,searchPath);
-		if(acbInfoList.Length > this.selectedCueSheetId){
+		//var acbInfoList = CriAtomAcfInfo.acfInfo.GetAcbInfoList(false,searchPath);
+		//if(acbInfoList.Length > this.selectedCueSheetId){
 
-			foreach (CriAtomAcfInfo.CueInfo inf in acbInfoList[selectedCueSheetId].cueInfoList.Values) {
-				cueList.Add(inf);
-			}
+		//	foreach (CriAtomAcfInfo.CueInfo inf in acbInfoList[selectedCueSheetId].cueInfoList.Values) {
+		//		cueList.Add(inf);
+		//	}
 
-			switch (type) {
-			case 0:
-				cueList.Sort(delegate(CriAtomAcfInfo.CueInfo x, CriAtomAcfInfo.CueInfo y) {
-					return x.id - y.id;
-				});
-				break;
-			default:
-				cueList.Sort(delegate(CriAtomAcfInfo.CueInfo x, CriAtomAcfInfo.CueInfo y) {
-					return string.Compare(x.name, y.name);
-				});
-				break;
-			} // end of switch
+		//	switch (type) {
+		//	case 0:
+		//		cueList.Sort(delegate(CriAtomAcfInfo.CueInfo x, CriAtomAcfInfo.CueInfo y) {
+		//			return x.id - y.id;
+		//		});
+		//		break;
+		//	default:
+		//		cueList.Sort(delegate(CriAtomAcfInfo.CueInfo x, CriAtomAcfInfo.CueInfo y) {
+		//			return string.Compare(x.name, y.name);
+		//		});
+		//		break;
+		//	} // end of switch
 
-			Dictionary<int, CriAtomAcfInfo.CueInfo> sortedList = new Dictionary<int, CriAtomAcfInfo.CueInfo>();
-			foreach (CriAtomAcfInfo.CueInfo inf in cueList) {
-				sortedList.Add(inf.id, inf);
-			}
+		//	Dictionary<int, CriAtomAcfInfo.CueInfo> sortedList = new Dictionary<int, CriAtomAcfInfo.CueInfo>();
+		//	foreach (CriAtomAcfInfo.CueInfo inf in cueList) {
+		//		sortedList.Add(inf.id, inf);
+		//	}
 
-			acbInfoList[this.selectedCueSheetId].cueInfoList = sortedList;
+		//	acbInfoList[this.selectedCueSheetId].cueInfoList = sortedList;
 
-		}
+		//}
 	}
 
 	private void ScalingWindow(int windowID)
@@ -480,40 +480,40 @@ public sealed class CriAtomWindow : EditorWindow
 			createGameObjectFlag = true;
 		}
 
-		var acbInfoList = CriAtomAcfInfo.acfInfo.GetAcbInfoList(false,searchPath);
-		if(acbInfoList.Length > this.selectedCueSheetId){
+		//var acbInfoList = CriAtomAcfInfo.acfInfo.GetAcbInfoList(false,searchPath);
+		//if(acbInfoList.Length > this.selectedCueSheetId){
 
-			GameObject go = null;
-			if (createGameObjectFlag) {
-				go = new GameObject(acbInfoList[this.selectedCueSheetId].cueInfoList[this.selectedCueId].name + "(CriAtomSource)");
-				if (Selection.gameObjects.Length > 0) {
-					go.transform.parent = Selection.gameObjects[0].transform;
-				}
-			} else {
-				go = Selection.gameObjects[0];
-			}
+		//	GameObject go = null;
+		//	if (createGameObjectFlag) {
+		//		go = new GameObject(acbInfoList[this.selectedCueSheetId].cueInfoList[this.selectedCueId].name + "(CriAtomSource)");
+		//		if (Selection.gameObjects.Length > 0) {
+		//			go.transform.parent = Selection.gameObjects[0].transform;
+		//		}
+		//	} else {
+		//		go = Selection.gameObjects[0];
+		//	}
 			
-			var acbInfo = acbInfoList[this.selectedCueSheetId];
-			CriAtom atom = GameObject.FindObjectOfType(typeof(CriAtom)) as CriAtom;
-			if (atom == null) {
-				atom = CriWare.managerObject.AddComponent<CriAtom>();
-				atom.acfFile = CriAtomAcfInfo.acfInfo.acfPath;
-			}
-			CriAtomCueSheet cueSheet = atom.GetCueSheetInternal(acbInfo.name);
-			if (cueSheet == null) {
-				cueSheet = atom.AddCueSheetInternal(null, acbInfo.acbPath, acbInfo.awbPath, null);
-			}
+		//	var acbInfo = acbInfoList[this.selectedCueSheetId];
+		//	CriAtom atom = GameObject.FindObjectOfType(typeof(CriAtom)) as CriAtom;
+		//	if (atom == null) {
+		//		atom = CriWare.managerObject.AddComponent<CriAtom>();
+		//		atom.acfFile = CriAtomAcfInfo.acfInfo.acfPath;
+		//	}
+		//	CriAtomCueSheet cueSheet = atom.GetCueSheetInternal(acbInfo.name);
+		//	if (cueSheet == null) {
+		//		cueSheet = atom.AddCueSheetInternal(null, acbInfo.acbPath, acbInfo.awbPath, null);
+		//	}
 
-			CriAtomSource newCriAtomSource = go.AddComponent<CriAtomSource>();
-			newCriAtomSource.cueSheet = cueSheet.name;
-			newCriAtomSource.cueName = acbInfo.cueInfoList[this.selectedCueId].name;
+		//	CriAtomSource newCriAtomSource = go.AddComponent<CriAtomSource>();
+		//	newCriAtomSource.cueSheet = cueSheet.name;
+		//	newCriAtomSource.cueName = acbInfo.cueInfoList[this.selectedCueId].name;
 
 
-			Selection.activeObject = go;
+		//	Selection.activeObject = go;
 
-			//Debug.Log("Add \"CRI Atom Souce\" \"" + newCriAtomSource.AcbName + "/" + newCriAtomSource.CueName + "\"");
+		//	//Debug.Log("Add \"CRI Atom Souce\" \"" + newCriAtomSource.AcbName + "/" + newCriAtomSource.CueName + "\"");
 
-		}
+		//}
 	}
 	#endregion
 
