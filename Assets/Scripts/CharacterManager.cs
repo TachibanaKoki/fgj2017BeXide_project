@@ -49,7 +49,7 @@ public class CharacterManager : SingletonMonoBehaviourFast<CharacterManager>
         if(m_nakedGage<0)
         {
             //ゲームオーバー
-            GameManager.I.GameClear();
+            GameManager.I.GameOver();
             m_nakedGage = 0;
         }
 

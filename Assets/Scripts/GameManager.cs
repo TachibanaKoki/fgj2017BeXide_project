@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager I;
 
+    public Image gameOverImage;
     public bool isGameClear = false;
     public void Start()
     {
@@ -30,9 +33,14 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        if (isGameClear) return;
         isGameClear = true;
-        //とりあえず仮でシーンをループ
-        SceneManager.LoadSceneAsync("Game Over");
-        SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.gameover);
+
+        gameOverImage.rectTransform.DOLocalMoveY(0.0f, 2.0f).SetEase(Ease.OutBounce).OnKill(() =>
+        {
+            SceneManager.LoadSceneAsync("Game Over");
+            SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.gameover);
+        }
+        );
     }
 }
