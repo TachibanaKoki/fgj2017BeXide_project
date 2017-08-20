@@ -76,7 +76,9 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 		if ((status == CriAtomSource.Status.Stop) || (status == CriAtomSource.Status.PlayEnd)) {//停止かエンドか
 			
 		} else {
-			SoundManager.Instance.atomSourceLifeGage.SetAisac ("Any", 1.0f - CharacterManager.Instance.m_nakedGage);
+			if (CharacterManager.Instance != null) {
+				SoundManager.Instance.atomSourceLifeGage.SetAisac ("Any", 1.0f - CharacterManager.Instance.m_nakedGage);
+			}
 		}
 	}
 
