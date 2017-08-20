@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor.SceneManagement;
 
 public class fadeout : MonoBehaviour {
 
@@ -16,9 +17,6 @@ public class fadeout : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-
-		
 	}
 
 	IEnumerator FadeOut()
