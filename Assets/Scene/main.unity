@@ -2243,7 +2243,7 @@ Prefab:
     - target: {fileID: 114042487492368712, guid: 4050cc3b2244f67438e64fcacd5044a8,
         type: 2}
       propertyPath: InstanceCount
-      value: 600
+      value: 800
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4050cc3b2244f67438e64fcacd5044a8, type: 2}

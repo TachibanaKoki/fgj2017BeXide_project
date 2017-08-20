@@ -15,7 +15,7 @@ public class CardBoardSpawn : MonoBehaviour
     {
 		for(int i=0;i<InstanceCount;i++)
         {
-            GameObject go = GameObject.Instantiate(CoardBoardPrefab, new Vector3(Random.Range(-200,300),30,Random.Range(-100,0)), Quaternion.identity);
+            GameObject go = GameObject.Instantiate(CoardBoardPrefab, new Vector3(Random.Range(-300,300),30,Random.Range(-100,100)), Quaternion.identity);
             go.GetComponent<Renderer>().material = CardBoardMaterial[Random.Range(0, CardBoardMaterial.Length)];
         }
 	}
