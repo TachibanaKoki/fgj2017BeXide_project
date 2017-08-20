@@ -6,11 +6,13 @@ public class CardBoardItem : MonoBehaviour
 {
     public CardBoardParts partsType;
     [HideInInspector]
-    public Texture texture;
+    public Material mat;
+    
 
 	void Start ()
     {
-        texture = GetComponent<Renderer>().material.mainTexture;
+        mat = GetComponent<Renderer>().material;
+        partsType = (CardBoardParts)Random.Range(0,4);
 	}
 	
 	void Update ()
