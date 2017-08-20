@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 114499002113820560}
   - component: {fileID: 195685097801135190}
   m_Layer: 0
-  m_Name: Police
+  m_Name: Police_BASE_29143
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
