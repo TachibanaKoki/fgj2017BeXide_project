@@ -7,6 +7,7 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 	CriAtomSource atomSourceBgm;
 	CriAtomSource atomSourceSe;
 	CriAtomSource atomSourceLifeGage;
+	CriAtomSource atomSourceEnemyVoice;
 	// Use this for initialization
 	void Start () {
 		
@@ -32,6 +33,11 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 		atomSourceLifeGage.use3dPositioning = false;
 		atomSourceLifeGage.Play ("life");	//	ライフ音
 		atomSourceLifeGage.Stop ();	//	ライフ音
+
+
+		atomSourceEnemyVoice = this.gameObject.AddComponent<CriAtomSource> ();
+		atomSourceEnemyVoice.cueSheet = "CueSheet_0";
+		atomSourceEnemyVoice.use3dPositioning = false;
 
 	}
 
@@ -125,6 +131,11 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 		/// </summary>
 		gameover
 
+	}
+
+	public void PlayEnemyVoice(string name_)
+	{
+		atomSourceEnemyVoice.Play (name_);
 	}
 
 	/// <summary>

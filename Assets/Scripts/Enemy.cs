@@ -112,63 +112,90 @@ public class Enemy : MonoBehaviour
 
 		if(m_nakedGage > 0.01 && m_nakedGage< 0.24)
 		{
-			if (message == 1)
+			if (message == 1) {
 				serifu = "ヘンタイ！";
-			else if (message == 2)
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			} else if (message == 2) {
 				serifu = "裸じゃねぇか？";
-			else if (message == 3)
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			} else if (message == 3) {
 				serifu = "ここに変態がいるぞい！！";
-			else if (message == 4)
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			} else if (message == 4) {
 				serifu = "やばい！不審者！";
-			else if (message == 5)
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			} else if (message == 5) {
 				serifu = "ギャァァァァ！！";
-			else
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			} else {
 				serifu = "ワイジャパニーズピーポー？";
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			}
 		}
 		else if(m_nakedGage > 0.25 && m_nakedGage < 0.49) 
 		{
-			if (message == 1)
+			if (message == 1) {
 				serifu = "あれ？！";
-			else if (message == 2)
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			} else if (message == 2) {
 				serifu = "Oh my God!!";
-			else if (message == 3)
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			} else if (message == 3) {
 				serifu = "What the…?";
-			else if (message == 4)
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			} else if (message == 4) {
 				serifu = "お兄さん、どうした？";
-			else if (message == 5)
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			} else if (message == 5) {
 				serifu = "ほんまに？";
-			else
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			} else {
 				serifu = "一体だれ。。。？";
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			}
 		}
 		else if (m_nakedGage > 0.5 && m_nakedGage < 0.74) 
 		{
-			if (message == 1)
+			if (message == 1) {
 				serifu = "何それ？";
-			else if (message == 2)
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			} else if (message == 2) {
 				serifu = "あのやつがあやしい。。。";
-			else if (message == 3)
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			} else if (message == 3) {
 				serifu = "お前さん、何としとるんじゃ？";
-			else if (message == 4)
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			} else if (message == 4) {
 				serifu = "えぇぇぇぇ、何？";
-			else if (message == 5)
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			} else if (message == 5) {
 				serifu = "何じゃ？あの人影は。。。";
-			else
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			} else {
 				serifu = "。。。。。。。。？";
+			}
 		}
 		else
 		{
-			if (message == 1)
+			if (message == 1) {
 				serifu = "。。。まぁ、ファションかな？";
-			else if (message == 2)
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			} else if (message == 2) {
 				serifu = "若者がわかりません。";
-			else if (message == 3)
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			} else if (message == 3) {
 				serifu = "ララララララ。。。。";
-			else if (message == 4)
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			} else if (message == 4) {
 				serifu = "今日もいい天気じゃ！";
-			else if (message == 5)
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			} else if (message == 5) {
 				serifu = "あ、またわしの足が暴れとるわい。";
-			else
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			} else {
 				serifu = "家に帰って笑点でも見ようか？";
+				SoundManager.Instance.PlayEnemyVoice ("v_hentai");
+			}
 		}
 
 		return serifu;
