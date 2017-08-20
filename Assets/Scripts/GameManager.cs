@@ -25,5 +25,14 @@ public class GameManager : MonoBehaviour
         isGameClear = true;
         //とりあえず仮でシーンをループ
         SceneManager.LoadSceneAsync("main");
+        SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.clear);
+    }
+
+    public void GameOver()
+    {
+        isGameClear = true;
+        //とりあえず仮でシーンをループ
+        SceneManager.LoadSceneAsync("Game Over");
+        SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.gameover);
     }
 }

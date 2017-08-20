@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.ThirdPerson;
 
 public enum CharacterStatus
 {
@@ -17,11 +18,16 @@ public class CharacterManager : SingletonMonoBehaviourFast<CharacterManager>
     public CharacterStatus status;
 	public float m_nakedGage = 1.0f;
 	int message = 0;
+    ThirdPersonUserControl TPuserControl;
+    ThirdPersonUserControl.MoveState oldMoveState;
+    
 
     // Use this for initialization
     void Start ()
     {
         status = CharacterStatus.Normal;
+        TPuserControl = GetComponent<ThirdPersonUserControl>();
+        oldMoveState = TPuserControl.moveState;
 	}
 	
     public void DecreseNakedGage()
@@ -72,6 +78,20 @@ public class CharacterManager : SingletonMonoBehaviourFast<CharacterManager>
                 DecreseNakedGage();
                 break;
         }
-        
-	}
+
+        if(oldMoveState != TPuserControl.moveState)
+        {
+            if(TPuserControl.moveState == ThirdPersonUserControl.MoveState.Run)
+            {
+                SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.Footstep);
+            }
+            else
+            {
+                SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.Standing);
+            }
+        }
+        oldMoveState = TPuserControl.moveState;
+
+
+    }
 }

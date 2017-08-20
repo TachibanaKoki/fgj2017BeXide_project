@@ -32,6 +32,7 @@ public class CardboardController : MonoBehaviour
         {
             PickCardBoard(col.gameObject.GetComponent<CardBoardItem>());
             Destroy(col.gameObject);
+
         }
     }
 
@@ -50,5 +51,6 @@ public class CardboardController : MonoBehaviour
     {
         Parts[(int)item.partsType].GetComponent<Renderer>().material.mainTexture = item.texture;
         GetComponent<CharacterManager>().OnItemPick();
+        SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.danbowl_get);
     }
 }
