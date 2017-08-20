@@ -13,7 +13,8 @@ public class TitleSceneManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-		if(SoundManager.Instance==null)
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        if (SoundManager.Instance==null)
         {
             async = SceneManager.LoadSceneAsync("SoundSetupScene",LoadSceneMode.Additive);
         }
@@ -33,8 +34,7 @@ public class TitleSceneManager : MonoBehaviour
 				SoundManager.Instance.SoundEvent (SoundManager.EnumBgmEvent.opening);
 			}
             isNext = true;
-            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-            SceneManager.LoadSceneAsync(SceneName,LoadSceneMode.Additive);
+            SceneManager.LoadScene(SceneName);
 
         }
 	}
