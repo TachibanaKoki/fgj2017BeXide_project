@@ -31,7 +31,7 @@ public class CharacterManager : SingletonMonoBehaviourFast<CharacterManager>
 	
     public void DecreseNakedGage()
     {
-        m_nakedGage -= 0.2f * Time.deltaTime; //0.05f
+        m_nakedGage -= 0.4f * Time.deltaTime; //0.05f
 
         if(m_nakedGage<0)
         {
@@ -50,7 +50,7 @@ public class CharacterManager : SingletonMonoBehaviourFast<CharacterManager>
 
     public void OnItemPick()
     {
-        m_nakedGage = Mathf.Min(1.0f,m_nakedGage+0.2f);
+        m_nakedGage = Mathf.Min(1.0f,m_nakedGage+0.15f);
     }
 
 	// Update is called once per frame

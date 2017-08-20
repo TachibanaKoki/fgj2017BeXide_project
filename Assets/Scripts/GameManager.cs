@@ -37,8 +37,11 @@ public class GameManager : MonoBehaviour
         isGameClear = true;
         //とりあえず仮でシーンをループ
         gameOverImage.sprite = GameClearImage;
+
+		SoundManager.Instance.PlayEnemyVoice ("v_yappahadakajyaneeka");
         gameOverImage.rectTransform.DOLocalMoveY(0.0f, 2.0f).SetEase(Ease.OutBounce).OnKill(() =>
-        {
+			{
+				SoundManager.Instance.PlayEnemyVoice ("clear");
             SceneManager.LoadSceneAsync("Clear");
             SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.clear);
 
