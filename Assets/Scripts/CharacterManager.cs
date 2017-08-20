@@ -19,7 +19,11 @@ public class CharacterManager : SingletonMonoBehaviourFast<CharacterManager>
 	public float m_nakedGage = 1.0f;
     ThirdPersonUserControl TPuserControl;
     ThirdPersonUserControl.MoveState oldMoveState;
-    
+
+    [SerializeField]
+    public Text GoalDistance;
+    [SerializeField]
+    public Transform Goal;
 
     // Use this for initialization
     void Start ()
@@ -56,6 +60,15 @@ public class CharacterManager : SingletonMonoBehaviourFast<CharacterManager>
 	// Update is called once per frame
 	void Update ()
     {
+        if (GameManager.I.isGameClear)
+        {
+            GoalDistance.text ="";
+
+        }
+        else
+        {
+            GoalDistance.text = "ゴールまで" + (int)Vector3.Distance(Goal.position, transform.position) + "m";
+        }
         m_nakedGage -= 0.03f * Time.deltaTime;
         slider.value = m_nakedGage;
         switch (status)

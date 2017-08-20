@@ -16,7 +16,16 @@ public class GameManager : MonoBehaviour
     Sprite GameOverImage;
 
     public Image gameOverImage;
+    [SerializeField]
+    public Text GoalDistance;
+    [SerializeField]
+    public Transform Goal;
     public bool isGameClear = false;
+
+    public void Update()
+    {
+        GoalDistance.text = "ゴールまで"+ Vector3.Distance(Goal.position,transform.position)+"m";
+    }
     public void Start()
     {
         I = this;
@@ -44,9 +53,7 @@ public class GameManager : MonoBehaviour
 				SoundManager.Instance.PlayEnemyVoice ("clear");
             SceneManager.LoadSceneAsync("Clear");
             SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.clear);
-
-        }
-);
+        });
     }
 
     public void GameOver()
