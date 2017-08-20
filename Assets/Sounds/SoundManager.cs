@@ -188,6 +188,7 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 			break;
 		case  EnumBgmEvent.gameover:
 			atomSourceSe.Play ("gameover");
+
 			break;
 		}
 	}
