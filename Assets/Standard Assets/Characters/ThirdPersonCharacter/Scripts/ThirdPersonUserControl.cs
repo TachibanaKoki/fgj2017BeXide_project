@@ -13,6 +13,8 @@ public class ThirdPersonUserControl : MonoBehaviour
 
     public MoveState moveState;
 
+    public bool isClear=false;
+
     private ThirdPersonCharacter m_Character; // A reference to the ThirdPersonCharacter on the object
     private Transform m_Cam;                  // A reference to the main camera in the scenes transform
     private Vector3 m_CamForward;             // The current forward direction of the camera
@@ -39,6 +41,7 @@ public class ThirdPersonUserControl : MonoBehaviour
     // Fixed update is called in sync with physics
     private void FixedUpdate()
     {
+        if (isClear) return;
         // read inputs
         float h = CrossPlatformInputManager.GetAxis("Horizontal");
         float v = CrossPlatformInputManager.GetAxis("Vertical");
