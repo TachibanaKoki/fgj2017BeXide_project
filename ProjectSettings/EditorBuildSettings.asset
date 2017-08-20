@@ -36,5 +36,8 @@ EditorBuildSettings:
     path: Assets/Scene/Game Over 3.unity
     guid: 5f5d39edac76b4829849d99e4dcbc967
   - enabled: 1
+    path: Assets/Scene/Clear.unity
+    guid: 39f445834cd6d40579470dc53b4b98a1
+  - enabled: 1
     path: Assets/Scene/Result.unity
     guid: 528e0ec20c885ae4197028754980cd4a
