@@ -28,6 +28,11 @@ public class TitleSceneManager : MonoBehaviour
             SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.title);
             isBGMEvent = true;
         }
+        else if(SoundManager.Instance!=null&& !isBGMEvent)
+        {
+            SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.title);
+            isBGMEvent = true;
+        }
 		if(Input.GetButton("Fire1")&&!isNext)
         {
 			{

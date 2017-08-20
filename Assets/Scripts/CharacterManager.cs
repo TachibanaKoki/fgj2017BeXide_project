@@ -56,7 +56,7 @@ public class CharacterManager : SingletonMonoBehaviourFast<CharacterManager>
 	// Update is called once per frame
 	void Update ()
     {
-        m_nakedGage -= 0.01f * Time.deltaTime;
+        m_nakedGage -= 0.03f * Time.deltaTime;
         slider.value = m_nakedGage;
         switch (status)
         {

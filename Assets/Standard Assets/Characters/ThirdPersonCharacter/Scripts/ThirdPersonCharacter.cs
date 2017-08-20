@@ -57,7 +57,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			ScaleCapsuleForCrouching(crouch);
 			PreventStandingInLowHeadroom();
 
-            transform.Translate(move*Time.deltaTime);
+            transform.Translate(move*Time.deltaTime*4.0f);
             // send input and other state parameters to the animator
             UpdateAnimator(move);
 		}
