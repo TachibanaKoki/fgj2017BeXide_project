@@ -9,6 +9,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager I;
 
+    [SerializeField]
+    Sprite GameClearImage;
+
+    [SerializeField]
+    Sprite GameOverImage;
+
     public Image gameOverImage;
     public bool isGameClear = false;
     public void Start()
@@ -27,15 +33,21 @@ public class GameManager : MonoBehaviour
     {
         isGameClear = true;
         //とりあえず仮でシーンをループ
-        SceneManager.LoadSceneAsync("main");
-        SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.clear);
+        gameOverImage.sprite = GameClearImage;
+        gameOverImage.rectTransform.DOLocalMoveY(0.0f, 2.0f).SetEase(Ease.OutBounce).OnKill(() =>
+        {
+            SceneManager.LoadSceneAsync("main");
+            SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.clear);
+
+        }
+);
     }
 
     public void GameOver()
     {
         if (isGameClear) return;
         isGameClear = true;
-
+        gameOverImage.sprite = GameOverImage;
         gameOverImage.rectTransform.DOLocalMoveY(0.0f, 2.0f).SetEase(Ease.OutBounce).OnKill(() =>
         {
             SceneManager.LoadSceneAsync("Game Over");
