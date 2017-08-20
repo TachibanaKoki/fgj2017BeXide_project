@@ -6,8 +6,19 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 
 	CriAtomSource atomSourceBgm;
 	CriAtomSource atomSourceSe;
+	CriAtomSource atomSourceLifeGage;
 	// Use this for initialization
 	void Start () {
+		
+		SoundSetup ();
+
+		//StartCoroutine ("SoundTest");
+
+
+	}
+
+	void SoundSetup()
+	{
 		atomSourceBgm = this.gameObject.AddComponent<CriAtomSource> ();
 		atomSourceBgm.cueSheet = "CueSheet_0";
 		atomSourceBgm.use3dPositioning = false;
@@ -16,11 +27,14 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 		atomSourceSe.cueSheet = "CueSheet_0";
 		atomSourceSe.use3dPositioning = false;
 
-
-		//StartCoroutine ("SoundTest");
-
+		atomSourceLifeGage = this.gameObject.AddComponent<CriAtomSource> ();
+		atomSourceLifeGage.cueSheet = "CueSheet_0";
+		atomSourceLifeGage.use3dPositioning = false;
+		atomSourceLifeGage.Play ("life");	//	ライフ音
+		atomSourceLifeGage.Stop ();	//	ライフ音
 
 	}
+
 
 	/// <summary>
 	/// Sounds the test.
@@ -47,6 +61,23 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 	// Update is called once per frame
 	void Update () {
 		
+		if (SoundManager.Instance.atomSourceLifeGage == null) {
+			
+		} else 
+		{
+			Update_Sound ();
+
+		}
+	}
+
+	public void Update_Sound()
+	{
+		CriAtomSource.Status status = atomSourceLifeGage.status;
+		if ((status == CriAtomSource.Status.Stop) || (status == CriAtomSource.Status.PlayEnd)) {//停止かエンドか
+			
+		} else {
+			SoundManager.Instance.atomSourceLifeGage.SetAisac ("Any", 1.0f - CharacterManager.Instance.m_nakedGage);
+		}
 	}
 
 	public enum EnumBgmEvent
@@ -107,6 +138,8 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 				atomSourceBgm.Play ();
 			}
 			atomSourceBgm.player.UpdateAll ();
+
+			atomSourceLifeGage.Stop();	//	ライフ音
 			break;
 		case  EnumBgmEvent.bgm_hi:
 			atomSourceBgm.player.SetSelectorLabel ("BgmState", "hi");
@@ -116,6 +149,8 @@ public class SoundManager : SingletonMonoBehaviourFast<SoundManager> {
 			}
 			atomSourceBgm.player.UpdateAll ();
 			atomSourceSe.Play ("odoroki");
+
+				atomSourceLifeGage.Play ("life");	//	ライフ音
 			break;
 		
 		case  EnumBgmEvent.danbowl_get:
