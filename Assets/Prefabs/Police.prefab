@@ -66,6 +66,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1944315259154978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4937327471813004}
+  - component: {fileID: 23848857868328800}
+  - component: {fileID: 102346198354068804}
+  m_Layer: 0
+  m_Name: Serifu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!4 &4335532052653232
 Transform:
   m_ObjectHideFlags: 1
@@ -91,6 +108,7 @@ Transform:
   m_Children:
   - {fileID: 4757792485582624}
   - {fileID: 4335532052653232}
+  - {fileID: 4937327471813004}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -107,6 +125,19 @@ Transform:
   m_Father: {fileID: 4393038470145650}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 5.07}
+--- !u!4 &4937327471813004
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1944315259154978}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.47, z: -0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_Children: []
+  m_Father: {fileID: 4393038470145650}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23589389603504318
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -121,6 +152,38 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 024fb5839bbfa9b4fab4897bb54a55a4, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23848857868328800
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1944315259154978}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: fba9dfc93b25649f69ebe57d0efbd2cb, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -192,131 +255,30 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
-  m_WarningMessage: '
-
-    Transform ''CC_Base_L_ToeBase'' has been deleted
-
-    Transform ''CC_Base_L_Foot'' has been deleted
-
-    Transform ''CC_Base_L_Calf'' has been deleted
-
-    Transform ''CC_Base_L_Thigh'' has been deleted
-
-    Transform ''CC_Base_R_ToeBase'' has been deleted
-
-    Transform ''CC_Base_R_Foot'' has been deleted
-
-    Transform ''CC_Base_R_Calf'' has been deleted
-
-    Transform ''CC_Base_R_Thigh'' has been deleted
-
-    Transform ''CC_Base_Pelvis'' has been deleted
-
-    Transform ''CC_Base_L_Finger02'' has been deleted
-
-    Transform ''CC_Base_L_Finger01'' has been deleted
-
-    Transform ''CC_Base_L_Finger00'' has been deleted
-
-    Transform ''CC_Base_L_Finger12'' has been deleted
-
-    Transform ''CC_Base_L_Finger11'' has been deleted
-
-    Transform ''CC_Base_L_Finger10'' has been deleted
-
-    Transform ''CC_Base_L_Finger22'' has been deleted
-
-    Transform ''CC_Base_L_Finger21'' has been deleted
-
-    Transform ''CC_Base_L_Finger20'' has been deleted
-
-    Transform ''CC_Base_L_Finger32'' has been deleted
-
-    Transform ''CC_Base_L_Finger31'' has been deleted
-
-    Transform ''CC_Base_L_Finger30'' has been deleted
-
-    Transform ''CC_Base_L_Finger42'' has been deleted
-
-    Transform ''CC_Base_L_Finger41'' has been deleted
-
-    Transform ''CC_Base_L_Finger40'' has been deleted
-
-    Transform ''CC_Base_L_Hand'' has been deleted
-
-    Transform ''CC_Base_L_Forearm'' has been deleted
-
-    Transform ''CC_Base_L_Upperarm'' has been deleted
-
-    Transform ''CC_Base_L_Clavicle'' has been deleted
-
-    Transform ''CC_Base_JawRoot'' has been deleted
-
-    Transform ''CC_Base_L_Eye'' has been deleted
-
-    Transform ''CC_Base_L_EyeRoot'' has been deleted
-
-    Transform ''CC_Base_R_Eye'' has been deleted
-
-    Transform ''CC_Base_R_EyeRoot'' has been deleted
-
-    Transform ''CC_Base_FacialBone'' has been deleted
-
-    Transform ''CC_Base_Head'' has been deleted
-
-    Transform ''CC_Base_NeckTwist02'' has been deleted
-
-    Transform ''CC_Base_NeckTwist01'' has been deleted
-
-    Transform ''CC_Base_R_Finger02'' has been deleted
-
-    Transform ''CC_Base_R_Finger01'' has been deleted
-
-    Transform ''CC_Base_R_Finger00'' has been deleted
-
-    Transform ''CC_Base_R_Finger12'' has been deleted
-
-    Transform ''CC_Base_R_Finger11'' has been deleted
-
-    Transform ''CC_Base_R_Finger10'' has been deleted
-
-    Transform ''CC_Base_R_Finger22'' has been deleted
-
-    Transform ''CC_Base_R_Finger21'' has been deleted
-
-    Transform ''CC_Base_R_Finger20'' has been deleted
-
-    Transform ''CC_Base_R_Finger32'' has been deleted
-
-    Transform ''CC_Base_R_Finger31'' has been deleted
-
-    Transform ''CC_Base_R_Finger30'' has been deleted
-
-    Transform ''CC_Base_R_Finger42'' has been deleted
-
-    Transform ''CC_Base_R_Finger41'' has been deleted
-
-    Transform ''CC_Base_R_Finger40'' has been deleted
-
-    Transform ''CC_Base_R_Hand'' has been deleted
-
-    Transform ''CC_Base_R_Forearm'' has been deleted
-
-    Transform ''CC_Base_R_Upperarm'' has been deleted
-
-    Transform ''CC_Base_R_Clavicle'' has been deleted
-
-    Transform ''CC_Base_Spine02'' has been deleted
-
-    Transform ''CC_Base_Spine01'' has been deleted
-
-    Transform ''CC_Base_Waist'' has been deleted
-
-    Transform ''CC_Base_Hip'' has been deleted
-
-    Transform ''CC_Base_BoneRoot'' has been deleted'
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!102 &102346198354068804
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1944315259154978}
+  m_Text: "\u5F85\u3061\u306A\u3055\u3044\uFF01"
+  m_OffsetZ: 0
+  m_CharacterSize: 100
+  m_LineSpacing: 1
+  m_Anchor: 1
+  m_Alignment: 1
+  m_TabSize: 4
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 12800000, guid: fba9dfc93b25649f69ebe57d0efbd2cb, type: 3}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
 --- !u!108 &108753272258638842
 Light:
   m_ObjectHideFlags: 1
@@ -380,6 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isStop: 0
   points: []
+  tm: {fileID: 102346198354068804}
 --- !u!136 &136421653908531932
 CapsuleCollider:
   m_ObjectHideFlags: 1
