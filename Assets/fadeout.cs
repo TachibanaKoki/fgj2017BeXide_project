@@ -6,21 +6,25 @@ using UnityEngine.UI;
 public class fadeout : MonoBehaviour {
 
 	public Image image;
-	float alp = 0;
-
 	// Use this for initialization
 	void Start () {
-		
+
+		image.color = new Color (255, 255, 255, 255);
+		image.CrossFadeAlpha (0, 3, false);
+		StartCoroutine (FadeOut());
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		image.color = new Color (0, 0, 0, alp);
-		alp += 5;
-		if (alp == 255) {
-			alp -= 10;
-		}
+
 		
 	}
+
+	IEnumerator FadeOut()
+	{
+		yield return new WaitForSeconds (5.0f);
+		image.CrossFadeAlpha (1, 3, false);
+	}
 }
+	

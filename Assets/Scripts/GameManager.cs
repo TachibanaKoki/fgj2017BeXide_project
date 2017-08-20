@@ -48,9 +48,10 @@ public class GameManager : MonoBehaviour
     {
         if (isGameClear) return;
         isGameClear = true;
-        gameOverImage.sprite = GameOverImage;
+		gameOverImage.sprite = GameOverImage;
+		SoundManager.Instance.PlayEnemyVoice ("v_hadakaja");
         gameOverImage.rectTransform.DOLocalMoveY(0.0f, 2.0f).SetEase(Ease.OutBounce).OnKill(() =>
-        {
+			{
             SceneManager.LoadSceneAsync("Game Over");
             SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.gameover);
         }
