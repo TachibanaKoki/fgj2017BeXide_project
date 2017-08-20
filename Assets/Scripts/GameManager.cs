@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
 
 	public void GameClear()
     {
+        if (isGameClear) return;
         isGameClear = true;
         //とりあえず仮でシーンをループ
         gameOverImage.sprite = GameClearImage;

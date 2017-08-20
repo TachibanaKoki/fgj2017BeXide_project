@@ -67,6 +67,8 @@ public class CharacterManager : SingletonMonoBehaviourFast<CharacterManager>
                 break;
         }
 
+        TPuserControl.isClear = GameManager.I.isGameClear;
+
         if(oldMoveState != TPuserControl.moveState)
         {
             if(TPuserControl.moveState == ThirdPersonUserControl.MoveState.Run)
