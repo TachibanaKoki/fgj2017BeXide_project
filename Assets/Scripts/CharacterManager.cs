@@ -82,6 +82,5 @@ public class CharacterManager : SingletonMonoBehaviourFast<CharacterManager>
         }
         oldMoveState = TPuserControl.moveState;
 
-
     }
 }
