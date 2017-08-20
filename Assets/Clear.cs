@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
-public class Clear : MonoBehaviour {
-
-	[RequireComponent(typeof(AudioSource))]
+public class Clear : MonoBehaviour
+{
 
 	// Use this for initialization
 	void Start () {
@@ -13,12 +12,12 @@ public class Clear : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		AudioSource audio = GetComponent<AudioSource>();
-		if (Time.timeSinceLevelLoad > 4)
-			//fade out
-		if (Time.timeSinceLevelLoad == 7)
-		if (Time.timeSinceLevelLoad == 21)
-			SceneManager.LoadScene("Title");
+	void Update ()
+    {
+        //AudioSource audio = GetComponent<AudioSource>();
+        if (Time.timeSinceLevelLoad >= 21 || Input.GetButtonDown("Fire1"))
+        {
+            SceneManager.LoadScene("Title");
+        }
 	}
 }
