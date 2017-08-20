@@ -86,8 +86,12 @@ public class Enemy : MonoBehaviour
 			SoundManager.Instance.SoundEvent(SoundManager.EnumBgmEvent.bgm_hi);
 
 			if (isStop) { // 老人ならゲージによって台詞を変える。
-				tm.text = selectSerifu (col.GetComponent<CharacterManager>());
-			};
+				tm.text = selectSerifu (col.GetComponent<CharacterManager> ());
+			} else {
+
+				//	老人じゃないなら　警官ボイス
+				SoundManager.Instance.PlayEnemyVoice ("v_machinasai");
+			}
 			tm.gameObject.SetActive (true);
 		}
 	}
